@@ -1,0 +1,103 @@
+{
+    "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "Build Viola-Jones trainer",
+                "type": "cppbuild",
+                "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+                "args": [
+                    "-std=gnu++20", "-g",
+                    "${workspaceFolder}/sources/train.cpp",
+                    "${workspaceFolder}/sources/integral_image.cpp",
+                    "${workspaceFolder}/sources/wavelet.cpp",
+                    "${workspaceFolder}/sources/wlearner.cpp",
+                    "${workspaceFolder}/sources/vjlearner.cpp",
+                    "${workspaceFolder}/sources/model_io.cpp",
+                    "${workspaceFolder}/sources/model_database.cpp",
+                    "${workspaceFolder}/sources/pool.cpp",
+                    "-I", "${workspaceFolder}/headers",
+                    "-I", "C:\\msys64\\mingw64\\include\\opencv5",
+                    "-L", "C:\\msys64\\mingw64\\lib",
+                    "-lopencv_core", "-lopencv_imgproc", "-lopencv_highgui",
+                    "-lopencv_imgcodecs", "-lopencv_objdetect",
+                    "-lopencv_xobjdetect", "-lopencv_videoio", "-lsqlite3",
+                    "-o", "${workspaceFolder}/bin/train.exe"
+                ],
+                "problemMatcher": ["$gcc"],
+                "group": {"kind": "build", "isDefault": true}
+            },
+            {
+                "label": "Build Viola-Jones image detector",
+                "type": "cppbuild",
+                "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+                "args": [
+                    "-std=gnu++20", "-g", "${workspaceFolder}/sources/image.cpp",
+                    "${workspaceFolder}/sources/face_detector.cpp",
+                    "${workspaceFolder}/sources/integral_image.cpp",
+                    "${workspaceFolder}/sources/wavelet.cpp",
+                    "${workspaceFolder}/sources/wlearner.cpp",
+                    "${workspaceFolder}/sources/vjlearner.cpp",
+                    "${workspaceFolder}/sources/model_io.cpp",
+                    "${workspaceFolder}/sources/pool.cpp",
+                    "-I", "${workspaceFolder}/headers",
+                    "-I", "C:\\msys64\\mingw64\\include\\opencv5",
+                    "-L", "C:\\msys64\\mingw64\\lib",
+                    "-lopencv_core", "-lopencv_imgproc", "-lopencv_highgui",
+                    "-lopencv_imgcodecs", "-lopencv_objdetect",
+                    "-lopencv_xobjdetect", "-lopencv_videoio",
+                    "-lcomdlg32",
+                    "-o", "${workspaceFolder}/bin/image.exe"
+                ],
+                "problemMatcher": ["$gcc"]
+            },
+            {
+                "label": "Build Viola-Jones webcam detector",
+                "type": "cppbuild",
+                "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+                "args": [
+                    "-std=gnu++20", "-g", "-static-libgcc", "-static-libstdc++",
+                    "${workspaceFolder}/sources/webcam.cpp",
+                    "${workspaceFolder}/sources/face_detector.cpp",
+                    "${workspaceFolder}/sources/integral_image.cpp",
+                    "${workspaceFolder}/sources/wavelet.cpp",
+                    "${workspaceFolder}/sources/wlearner.cpp",
+                    "${workspaceFolder}/sources/vjlearner.cpp",
+                    "${workspaceFolder}/sources/model_io.cpp",
+                    "${workspaceFolder}/sources/pool.cpp",
+                    "-I", "${workspaceFolder}/headers",
+                    "-I", "C:\\msys64\\mingw64\\include\\opencv5",
+                    "-L", "C:\\msys64\\mingw64\\lib",
+                    "-lopencv_core", "-lopencv_imgproc", "-lopencv_highgui",
+                    "-lopencv_imgcodecs",
+                    "-lopencv_xobjdetect",
+                    "-lole32", "-lmf", "-lmfplat", "-lmfreadwrite", "-lmfuuid",
+                    "-o", "${workspaceFolder}/bin/webcam.exe"
+                ],
+                "problemMatcher": ["$gcc"]
+            },
+            {
+                "label": "Build viola_jones image detector",
+                "type": "cppbuild",
+                "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+                "args": [
+                    "-std=gnu++20", "-g", "-static-libgcc", "-static-libstdc++",
+                    "${workspaceFolder}/viola_jones.cpp",
+                    "${workspaceFolder}/sources/face_detector.cpp",
+                    "${workspaceFolder}/sources/integral_image.cpp",
+                    "${workspaceFolder}/sources/wavelet.cpp",
+                    "${workspaceFolder}/sources/wlearner.cpp",
+                    "${workspaceFolder}/sources/vjlearner.cpp",
+                    "${workspaceFolder}/sources/model_io.cpp",
+                    "${workspaceFolder}/sources/pool.cpp",
+                    "-I", "${workspaceFolder}/headers",
+                    "-I", "C:\\msys64\\mingw64\\include\\opencv5",
+                    "-L", "C:\\msys64\\mingw64\\lib",
+                    "-lopencv_core", "-lopencv_imgproc", "-lopencv_highgui",
+                    "-lopencv_imgcodecs", "-lopencv_objdetect",
+                    "-lopencv_xobjdetect", "-lopencv_videoio",
+                    "-o", "${workspaceFolder}/bin/viola_jones.exe"
+                ],
+                "problemMatcher": ["$gcc"]
+            }
+        ]
+}
